@@ -1,0 +1,119 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #2dc46a 30%, rgb(237, 237, 237) 30%);
+    padding-bottom: 70px;
+}
+
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.form-page-title {
+    color: white;
+    font-size: 24px;
+    margin-left: 24px;
+    margin-top: 30px;
+}
+
+.form-centre-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-title {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 0px 50px 50px 50px;
+    align-items: center;
+}
+.form-title-section {
+    margin-top: 40px;
+}
+.personal-details-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(92, 92, 92);
+}
+.form-divider {
+    border: 1px solid rgb(154, 154, 154);
+}
+
+.form-personal-details-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.form-data-div {
+    display: flex;
+    gap: 25px;
+}
+.photo-insert-container {
+    background-color: #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120px;
+    width: 190px;
+    margin-top: 25px;
+    padding-top: 70px;
+    border: dotted grey;
+}
+.camera {
+    height: 40px;
+    width: 50px;
+}
+.insert-picture {
+    font-size: 13px;
+    color: rgb(92, 92, 92);
+}
+
+.input-container, .text-input-container {
+    display: flex;
+    flex-direction: column;
+}
+.input-container {
+    margin-top: 20px;
+}
+.textbox-title {
+    color: rgb(92, 92, 92);
+    font-size: 17px;
+}
+.textbox {
+    height: 40px;
+    width: 400px;
+}
+.date-container, .form-skills-section {
+    display: flex;
+    align-items: end;
+    gap: 20px;
+}
+.drop-down {
+    height: 40px;
+    width: 200px;
+}
+
+.build-resume-button {
+    height: 50px;
+    width: 220px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #6169cf;
+    border: 2px solid #6169cf; 
+    border-radius: 10px;
+    margin-top: 50px;
+    transition: all 0.3s ease;
+}
+.build-resume-button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px #6169cf, 0 0 20px #ffffff, 0 0 30px #ffffff; 
+}
+

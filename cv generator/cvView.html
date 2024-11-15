@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Generator</title>
+    <link rel="stylesheet" href="cvView.css">
+    <style>
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="cv-container">
+        <div class="cv-top-section">
+            <p class="cv-page-title">CV Generator</p>
+        </div>
+
+        <div class="cv-centre-section">
+            <p class="cv-page-title">Your CV is ready!</p>
+
+            <div class="cv-main-section">
+                <div class="cv-title-section">
+                    <p class="cv-title">John Smith</p>
+                    <hr class="cv-divider">
+                </div>
+
+                <div class="cv-personal-details-section">
+                    <p class="cv-section-title">Personal details</p>
+    
+                    <div class="cv-details-container">
+                        <div class="cv-properties-container">
+                            <p class="cv-detail">Name</p>
+                            <p class="cv-detail">Address</p>
+                            <p class="cv-detail">Phone number</p>
+                            <p class="cv-detail">Email</p>
+                        </div>
+
+                        <div class="cv-value-container">
+                            <p class="cv-detail">John Smith</p>
+                            <p class="cv-detail">Maitidevi, Kathmandu</p>
+                            <p class="cv-detail">9818557623</p>
+                            <p class="cv-detail">johnsmith2000@gmail.com</p>
+                        </div>
+                    </div>
+                    <hr class="cv-divider">
+                </div>
+
+                <div class="cv-education-section">
+                    <p class="cv-section-title">Education</p>
+    
+                    <div class="cv-details-container">
+                        <div class="cv-properties-container">
+                            <p class="cv-detail">September 2018 - December 2022</p>
+                        </div>
+
+                        <div class="cv-value-container">
+                            <p class="cv-detail">BSc in Computer Science</p>
+                            <p class="cv-institution">Softwarica College</p>
+                            <p class="cv-uni-address">Dillibazar, Kathmandu</p>
+                        </div>
+                    </div>
+                    <hr class="cv-divider">
+                </div>
+
+                <div class="cv-skills-section">
+                    <p class="cv-section-title">Skills</p>
+    
+                    <div class="cv-details-container">
+                        <div class="cv-properties-container">
+                            <p class="cv-detail">JavaScript</p>
+                        </div>
+
+                        <div class="cv-value-container">
+                            <p class="cv-detail">Intermediate</p>
+                        </div>
+                    </div>
+                    <hr class="cv-divider">
+                </div>
+            </div>
+
+            <button class="pdf-button">Download PDF</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('pdf-button').addEventListener('click', function () {
+          const element = document.getElementById('cv-main-section'); // Target the <div>
+          
+          // Options for pdf formatting
+          const options = {
+            margin: 1, // Margin in inches
+            filename: 'my-resume.pdf', // File name
+            image: { type: 'jpeg', quality: 0.98 }, // Image quality
+            html2canvas: { scale: 2 }, // Canvas resolution
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } // PDF settings
+          };
+      
+          // Generate and save PDF
+          html2pdf().set(options).from(element).save();
+        });
+      </script>
+      
+</body>
+
+</html>
