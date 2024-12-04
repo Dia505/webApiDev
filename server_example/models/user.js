@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     contactNo: {
         type: String,
         required: true
-    }
+    },
 });
 
 const User = mongoose.model("user", userSchema);
