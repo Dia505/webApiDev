@@ -1,4 +1,5 @@
 const User = require("../models/User")
+const nodemailer = require("nodemailer")
 
 const findAll = async(req, res) => {
     try{
@@ -14,7 +15,28 @@ const save = async(req, res) => {
     try {
         const user = new User(req.body);
         await user.save();
-        res.status(201).json(user)
+
+        const transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false,
+            protocol: "smtp",
+            auth: {
+                user: "dia48261@gmail.com",
+                pass: "ksaktpzoadssebse"
+            }
+        })
+
+        const info = await transporter.sendMail({
+            from: "dia48261@gmail.com",
+            to: user.email,
+            subject: "User Registration",
+            html: `
+            <h1> Your registration has been successfully completed </h1>
+            <p> Your user id is ${user.id}</p>`
+        })
+
+        res.status(201).json({user, info})
     }
     catch(e) {
         res.json(e);
