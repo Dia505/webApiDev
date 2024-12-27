@@ -13,7 +13,7 @@ connectDb();
 // //middle-ware
 app.use(express.json());
 app.use("/api/user", userRoute)
-app.use("/api/cred", credRoute);
+// app.use("/api/cred", credRoute);
 app.use("/api/files", fileRoute)
 
 //to get files from storage
